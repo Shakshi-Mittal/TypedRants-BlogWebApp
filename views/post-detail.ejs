@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= post.title %> | Typed Rants</title>
+    <link rel="stylesheet" href="/styles/post-layout.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title"><%= post.title %></h1>
+            <p class="summary"><em><%= post.summary %></em></p>
+            <p class="date">Posted on <%= new Date(post.createdAt).toLocaleDateString() %></p>
+        </header>  
+
+        <article class="content">
+            <p><%= post.content %></p>
+        </article>
+    </div>
+    
+<footer>
+    <a href="/" class="back-btn">⬅ Back to Latest Rants</a>
+</footer>
+
+</body>
+</html>
+
+

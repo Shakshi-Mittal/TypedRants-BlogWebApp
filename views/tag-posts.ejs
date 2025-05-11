@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head file with styles, meta, etc -->
+  <title>Rants tagged with "<%= tag %>"</title>
+  <link rel="stylesheet" href="/styles/tag-layout.css">
+  <link rel="stylesheet" href="/styles/layout.css">
+</head>
+<body>
+
+  <%- include("partials/header.ejs") %> <!-- Optional header/nav -->
+
+  <main class="tag-posts">
+    <h2>Rants tagged with "<%= tag %>"</h2>
+
+    <% if (posts.length > 0) { %>
+      <div class="rants-scroll-container">
+        <% posts.forEach(post => { %>
+          <div class="rant-card">
+            <h3><%= post.title %></h3>
+            <p class="summary">"<%= post.summary %>"</p>
+            <a href="/posts/<%= post.id %>" class="back-btn">Read More</a>
+          </div>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <p>No rants under this tag. Might be time to write one?</p>
+    <% } %>
+
+    
+  </main>
+  <a href="/" class="back-btn">← Back to All Rants</a>
+
+  <%- include("partials/footer.ejs") %>
+</body>
+</html>

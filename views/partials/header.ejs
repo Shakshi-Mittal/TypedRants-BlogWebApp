@@ -1,0 +1,24 @@
+<header>
+  <div class="header-container">
+   <a href="/" class="logo">
+    <img src="/logo.png" alt="Site Logo">
+  </a>
+    <nav class="top-nav">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/about" class="nav-link">About</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Categories</a>
+          <div class="mega-menu">
+            <% if (tags && tags.length > 0) { %>
+            <% tags.forEach(tag => { %>
+              <a href="/tags/<%= tag %>"><%= tag %></a>
+            <% }) %>
+            <% } else { %>
+                <span class="no-tags">No tags available</span>
+            <% } %>
+            </div>
+        </div>   
+      </nav>
+    </div>
+  </header>
+  

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="/styles/layout.css">
+</head>
+<body>
+   <%- include("partials/header.ejs") %>
+   <section class ="hero">
+    <h1>Welcome to Typed Rants - where opinions go to rant, not rest. </h1>
+    <p>Unfiltered thoughts, questionable wisdom, and occasional brilliance.</p>
+  </section>
+   <div class="rants-scroll-container2">
+      <% if (posts.length > 0) { %>
+        <% posts.forEach(post => { %>
+          <div class ="rant-card">
+            <h3><%= post.title %></h3>
+            <p class="summary">"<%= post.summary %>"</p>
+            <div class="tags">
+              <% post.tags.forEach(tag => { %>
+                <span class="tag"><%= tag %></span>
+                <% }) %>
+            </div>
+            <a href="/posts/<%= post.id %>" class="push-btn">Read More</a>
+          </div>
+        <% }) %>
+      <% }else { %>
+        <p>No rants yet. Feeling suspiciously peaceful...</p>
+      <% } %>  
+    </div>
+    <a href="/" class="allPosts-btn back-btn2">← Back to the Chaos</a>
+
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Typed Rants</title>
+  <link rel="stylesheet" href="/styles/allRants-layout.css" />
+</head>
+<body>
+  <h1 style="text-align: center">My Typed Rants</h1>
+
+  <form method="GET" action="/rants">
+    <label for="tag">Filter by Tag:</label>
+    <select name="tag" id="tag" onchange="this.form.submit()">
+      <option value="">All</option>
+      <% allTags.forEach(tag => { %>
+        <option value="<%= tag %>" <%= selectedTag === tag ? 'selected' : '' %>><%= tag %></option>
+      <% }); %>
+    </select>
+    <label for="sort">Sort by Date:</label>
+  <select name="sort" id="sort" onchange="this.form.submit()">
+    <% var order = (typeof sortOrder !== 'undefined' && sortOrder ) ? sortOrder : 'desc'; %>
+<option value="desc" <%= order === 'desc' ? 'selected' : '' %>>Newest First</option>
+<option value="asc" <%= order === 'asc' ? 'selected' : '' %>>Oldest First</option>
+
+  </select>
+  </form>
+
+  <% if (rants.length === 0) { %>
+    <p>No rants yet. All that sarcasm going to waste?</p>
+  <% } else { %>
+    <div class="rant-wrapper">
+      <% rants.forEach(rant => { %>
+        <div class="rant-card">
+          <a href="/rants/<%= rant.id %>">
+            <h3><%= rant.title %></h3>
+            <p><%= rant.content.slice(0, 140) %>...</p>
+          </a>
+
+          <div class="tags">
+            <% rant.tags.forEach(tag => { %>
+              <span class="tag"><%= tag %></span>
+            <% }) %>
+          </div>
+          <div class="button-group">
+               <form action="/rants/<%= rant.id %>/edit" method="GET">
+              <button class="button" type="submit">Edit</button>
+            </form>
+            <form action="/rants/<%= rant.id %>/delete" method="POST">
+              <button class="button" onclick="return confirm('Delete this masterpiece? As its irreversible like your Last Relationship')">Delete</button>
+            </form>
+          </div>
+           
+          </div>
+      <% }) %>
+    </div>
+  <% } %>
+</body>
+</html>

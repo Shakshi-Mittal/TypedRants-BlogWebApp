@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unleash Your Genius (or Garbage)</title>
+  <link rel="stylesheet" href="/styles/submit-layout.css">
+  <link rel="stylesheet" href="/styles/layout.css">
+</head>
+<body>
+  <%- include("partials/header") %>
+  <h1>Let It All Out</h1>
+  <form action="/rants" method="POST">
+    <label for="title">Rant Title (make it dramatic):</label><br>
+    <input type="text" id="title" name="title" required placeholder="e.g., Why Your Wi-Fi Hates You"><br><br>
+
+    <label for="summary">One-Line Summary (hook ‘em fast):</label><br>
+    <input type="text" id="summary" name="summary" required placeholder="e.g., A tale of slow internet and broken dreams"><br><br>
+
+    <label>Pick Tags That Fit (choose as many as you dare):</label><br>
+    <% const tags = [
+      "Hot Take", "Overrated", "Mildly Interesting", "WhyMe", "Overthinking",
+      "RelatableAF", "UnpopularOpinion", "9to5Nonsense", "CtrlAltDelMyLife",
+      "OverratedThings", "AdultingIsHard", "ExistentialCrisis", "InstagramVsReality",
+      "SarcasmTherapy", "CertifiedMess", "ChaosAndCoffee", "TrendingForNoReason", "KeyboardWarrior"
+    ]; %>
+  <div class="tags-grid">
+    <% tags.forEach(tag => { %>
+      <label>
+        <input type="checkbox" name="tags" value="<%= tag %>"> <%= tag %>
+      </label><br>
+    <% }) %><br>
+</div>
+    <label for="content">Type away... or don’t:</label><br>
+    <textarea id="content" name="content" rows="6" cols="40" required></textarea><br><br>
+
+    <button type="submit">Rant Away!</button>
+  </form>
+</body>
+</html>

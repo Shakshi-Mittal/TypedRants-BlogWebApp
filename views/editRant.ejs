@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Rant</title>
+</head>
+<body>
+  <h1>Edit Your Rant</h1>
+  <form action="/rants/<%= rant.id %>/update" method="POST">
+    <label for="title">Rant Title:</label><br>
+    <input type="text" id="title" name="title" value="<%= rant.title %>" required><br><br>
+
+    <label for="summary">Summary:</label><br>
+    <input type="text" id="summary" name="summary" value="<%= rant.summary %>" required><br><br>
+
+    <label>Tags:</label><br>
+    <% allTags.forEach(tag => { %>
+      <label>
+        <input type="checkbox" name="tags" value="<%= tag %>" <%= rant.tags.includes(tag) ? 'checked' : '' %>> <%= tag %>
+      </label><br>
+    <% }); %><br>
+
+    <label for="content">Rant Content:</label><br>
+    <textarea id="content" name="content" rows="6" cols="40" required><%= rant.content %></textarea><br><br>
+
+    <p><em>Last edited on: <%= rant.updatedAt ? rant.updatedAt.toLocaleString() : "Never" %></em></p>
+
+    <button type="submit">Regret Something? Fix It.</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;700&family=Space+Mono&family=Caveat&display=swap');
+
+:root {
+  --bg-color: #fdfdfd;
+  --text-color: #1a1a1a;
+  --accent-color: #ff5816;
+  --link-color: #007acc;
+  --font-header: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-hand: 'Caveat', cursive;
+
+}
+
+
+body {
+  background-color: #fdfdfd;
+  color: #1a1a1a;
+  font-family: 'DM Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #fff, #f9f9f9);
+}
+
+.hero h1 {
+  font-family: var(--font-header);
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  color: #444;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.logo img {
+  height: 4rem;
+}
+
+
+.cta {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta:hover {
+background-color: #ae3a38;
+}
+
+
+
+/*start-reading section*/
+.rants-scroll-container2 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.9rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.5rem;
+  margin-left: 120px;
+
+}
+
+.allPosts-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  max-width: 250px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.back-btn2 {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  background: #bd270d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+/*latest rants sect*/
+
+#latest-rants {
+  padding: 2rem;
+  background: #fff;
+}
+
+.rants-scroll-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  padding-bottom: 0.5rem;
+}
+
+.rant-card {
+  flex: 0 0 auto;
+  width: 250px;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 100%; */
+  min-height: 280px;
+}
+
+.rant-card:hover {
+  transform: translateY(-5px);
+}
+.rant-card h3 {
+  margin-bottom: 0.5rem;
+  color: #222;
+  font-size: 1.2rem;
+  min-height: 48px;
+}
+
+.rant-card .summary {
+  font-style: italic;
+  color: #666;
+  margin-bottom: auto;
+  min-height: 60px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0.5rem 0;
+  min-height: 48px;
+  align-items: center;
+}
+
+.tag {
+  display: inline-block;
+  background: #b46052;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+.read-btn {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  background: #bd270d;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+.push-btn {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  background: #ff4b2b;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+ margin-top: 0.75rem;
+  align-self: center;
+  transition: background-color 0.2s ease;
+}
+
+
+/* Top Nav */
+
+
+.top-nav {
+  background: white;
+  padding: 10px 20px;
+  display: flex;
+  /* gap: 0.25rem; */
+  justify-content: flex-end;
+  align-items: center;
+  /* border-bottom: 1px solid #ddd; */
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: var(--accent-color);;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  margin-right: 2rem;
+}
+.top-nav a:last-child {
+  margin-right: 0; /* Prevents extra space after the last item */
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  color: #ff4b2b;
+  /* padding: 8px 8px; */
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mega-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 200px;
+  border: 1px solid #ddd;
+  box-shadow: 0 p8x 16px rgba(0,0,0,0.15);
+  z-index: 100;
+  padding: 0.5rem;
+  width: 600px;
+  border-radius: 10px;
+  top: 100%;
+  right: 75%;
+  overflow: hidden;
+  gap: 10px;
+}
+
+.mega-menu a {
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  /* word-break: break-word; */
+  white-space: normal;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .mega-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 3fr));
+  gap: 10px;
+}
+
+/*featured css*/
+#featured-rant {
+  background-color: #fff3f0;
+  border-left: 5px solid #ff4b2b;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 10px;
+}
+
+#featured-rant blockquote {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.featured-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.featured-link {
+  /* color: #ff4b2b; */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.featured-link:hover {
+  text-decoration: underline;
+}
+
+/*for footer and about*/
+.footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px solid #eee;
+}
+.site-footer {
+  background-color: #f4f4f4;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 4rem;
+  border-top: 1px solid #ddd;
+}
+
+.footer-links a {
+  margin: 0 0.7rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-page h1 {
+  font-family: var(--font-header);
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-page h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  color: var(--text-color);
+}
+.about-page p {
+  max-width: 700px;
+  line-height: 1.6;
+  color: #444;
+  margin: 1rem 0;
+}
+
+.about-page ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 1rem 0;
+  text-align: left;
+  max-width: 600px;
+}
+
+.about-page ul li {
+  margin-bottom: 0.5rem;
+}
+
+
+.about-page .read-btn {
+  margin-top: 2rem;
+  align-self: center;
+}
+
+/*submit a rant modal*/
