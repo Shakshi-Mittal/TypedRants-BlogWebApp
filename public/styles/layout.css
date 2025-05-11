@@ -23,7 +23,7 @@ body {
 }
 
 .hero {
-  padding: 4rem 2rem;
+  padding: 8rem 2rem;
   text-align: center;
   background: linear-gradient(135deg, #fff, #f9f9f9);
 }
@@ -127,16 +127,16 @@ background-color: #ae3a38;
 
 .rant-card {
   flex: 0 0 auto;
-  width: 250px;
+  width: 300px;
   padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 340px;
-  height: 340px; 
+  height: 320px; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .rant-card:hover {
