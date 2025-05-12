@@ -94,17 +94,24 @@ body {
   gap: 1.9rem;
   flex-wrap: wrap;
   padding-bottom: 0.5rem;
-  margin-left: 120px;
+  margin-left: 80px;
 }
 
 .allPosts-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3rem 1rem;
+  padding: 0.75rem 1.5rem;
   max-width: 250px;
-  margin: 0 auto;
+  margin: 2rem auto;
   text-align: center;
+  background: #bd270d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s ease;
 }
 
 .back-btn2 {
@@ -548,3 +555,47 @@ body {
   }
 }
  
+@media (max-width: 600px) {
+   .hero1{
+    display: none;
+   }
+
+  .rants-scroll-container2 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.9rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.5rem;
+  margin-left: 40px;
+  margin-top: 16px;
+}
+
+.allPosts-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  max-width: 250px;
+  margin: 2rem auto;
+  text-align: center;
+  background: #bd270d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.rant-card {
+  height: auto;
+}
+.tags {
+  display: none;
+}
+
+.rant-card h3 {
+  min-height: 24px;
+}
+  
+}
