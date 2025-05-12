@@ -41,8 +41,8 @@
 
 <!-- Mobile Category Scroll -->
 <div class="mobile-category-bar">
-  <a href="/latest" class="category-item">Latest</a>
-  <a href="/featured" class="category-item">Featured <span class="new-badge">New</span></a>
+  <a href="/allPosts" class="category-item"> For You</a>
+  <!-- <a href="/featured" class="category-item">Featured <span class="new-badge">New</span></a> -->
   <% if (tags && tags.length > 0) { %>
     <% tags.forEach(tag => { %>
       <a href="/tags/<%= tag %>" class="category-item"><%= tag %></a>

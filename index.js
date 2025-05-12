@@ -128,6 +128,13 @@ app.get("/allPosts", (req, res) => {
   res.render("allPosts.ejs", {posts: recentPosts});
 })
 
+app.get("/featured", (req, res) => {
+  const recentPosts = posts
+  const featuredPost = recentPosts[0]; // Or any other logic you prefer
+  res.render("featured", { posts: recentPosts, featuredPost });
+});
+
+
 
 // for submit a rant modal
 

@@ -1,0 +1,24 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Posts</title>
+    <link rel="stylesheet" href="/styles/layout.css">
+  </head>
+  <body>
+      <section id = "featured-rant">
+    <h2>🌟 Featured Rant</h2>
+    <% if (featuredPost) { %>
+      <blockquote>
+        "<%= featuredPost.summary %>"
+      </blockquote>
+      <p class="featured-title"> - <%= featuredPost.title %></p>
+      <a href="/posts/<%= featuredPost.id %>" class="read-btn featured-link">Read why → </a>
+    <% } else { %>
+      <p>No rants featured yet.</p>
+    <% } %>
+  </section>
+  </body>
+  </html>
