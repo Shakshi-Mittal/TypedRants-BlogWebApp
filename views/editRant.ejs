@@ -2,8 +2,10 @@
 <html>
 <head>
   <title>Edit Rant</title>
+  <link rel="stylesheet" href="/styles/edit.css">
 </head>
 <body>
+  <div class="edit-page">
   <h1>Edit Your Rant</h1>
   <form action="/rants/<%= rant.id %>/update" method="POST">
     <label for="title">Rant Title:</label><br>
@@ -11,20 +13,21 @@
 
     <label for="summary">Summary:</label><br>
     <input type="text" id="summary" name="summary" value="<%= rant.summary %>" required><br><br>
-
+    <div class="tags">
     <label>Tags:</label><br>
     <% allTags.forEach(tag => { %>
       <label>
         <input type="checkbox" name="tags" value="<%= tag %>" <%= rant.tags.includes(tag) ? 'checked' : '' %>> <%= tag %>
       </label><br>
     <% }); %><br>
-
+</div>
     <label for="content">Rant Content:</label><br>
     <textarea id="content" name="content" rows="6" cols="40" required><%= rant.content %></textarea><br><br>
 
     <p><em>Last edited on: <%= rant.updatedAt ? rant.updatedAt.toLocaleString() : "Never" %></em></p>
 
-    <button type="submit">Regret Something? Fix It.</button>
+    <button type="submit"  class="regret-btn">Regret Something? Fix It.</button>
   </form>
+  </div>
 </body>
 </html>

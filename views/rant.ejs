@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title><%= rant.title %></title>
+  <link rel="stylesheet" href="/styles/updated-rant.css">
 </head>
 <body>
+  <%- include("partials/header.ejs") %>
+  <div class="rant-container">
   <h1><%= rant.title %></h1>
 
   <div class="tags">
@@ -12,9 +15,12 @@
       <span class="tag"><%= tag %></span>
     <% }) %>
   </div>
-
+<p class="rant-summary"><%= rant.summary %></p>
   <div class="content">
     <%= rant.content %>
   </div>
+  </div>
+
+  <%- include("partials/footer.ejs") %>
 </body>
 </html>

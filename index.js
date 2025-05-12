@@ -7,11 +7,6 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}))
 
 
-
-// app.get("/", (req, res) => {
-//   res.render("index.ejs");
-// });
-
 let posts = [
   {
     id: 1,
@@ -64,11 +59,11 @@ let posts = [
     tags: ["CtrlAltDelMyLife", "WhyMe"],
   },
   {
-    id: 6,
+    id: 7,
     title: "My Smart Fridge is Judging Me",
     summary: "When even your appliances start fat-shaming you.",
     content: "Look, I never asked for a fridge with Wi-Fi. All I wanted was cold milk and the occasional ice cube. But no—modern problems require overengineered solutions, and now I have a “smart” fridge that sends notifications to my phone. Last week, I got this gem: “You’ve opened the fridge 17 times today. Consider hydration instead.” Excuse me? And then it suggested recipes based on what’s inside: “Try making a salad with your spinach before it wilts again.” It said “again.” As in, it remembers that I let it die last time. My fridge has memory. And opinions. Now I’m sneaking into my own kitchen like I’m on a stealth mission. I feel judged every time I grab a slice of cheese at midnight. At this point, I’m ready to trade it for a dumb icebox and my dignity.",
-    createdAt: "2025-06-11T01:56:03",
+    createdAt: "2025-05-11T01:56:03",
     tags: ["SarcasmTherapy", "CertifiedMess"],
   }
   
@@ -92,7 +87,7 @@ app.use((req, res, next) => {
   next();
 });
 
-
+//for latest rants section
 
 app.get('/', (req, res) => {
   const recentPosts = [...posts, ...rants]
@@ -122,11 +117,13 @@ app.get('/about', (req, res) => {
   res.render("about.ejs");
 })
 
-//for start reading new post
+
+//for reading new post
+
 app.get("/allPosts", (req, res) => {
-  const recentPosts = posts
+  const recentPosts = [...posts, ...rants]
   .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-   res.render("allPosts.ejs", {posts: recentPosts,});
+  res.render("allPosts.ejs", {posts: recentPosts});
 })
 
 

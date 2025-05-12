@@ -229,6 +229,12 @@ h2 {
   text-decoration: underline;
 }
 
+.footer-links img{
+  height: 24px;
+  width: auto;
+  vertical-align: middle;
+}
+
 /*responsiveness*/
 @media (max-width: 900px) {
     .rants-scroll-container {

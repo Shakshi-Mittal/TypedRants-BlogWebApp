@@ -1,19 +1,32 @@
-/* Global styles to match the homepage aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;700&family=Space+Mono&family=Caveat&display=swap');
 body {
-  font-family: 'Inter', 'Segoe UI', sans-serif;
-  background-color: #fff;
+  background-color: #fdfdfd;
   color: #1a1a1a;
+  font-family: 'DM Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.edit-page {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
-  padding: 2rem;
 }
 
-h1 {
-  font-size: 2.5rem;
-  font-weight: 900;
-  margin-bottom: 2rem;
+.tags {
+    display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0.5rem 0;
+  min-height: 48px;
+  align-items: center;
+  flex-grow: 1;
 }
-
-/* Input and select styling */
 input[type="text"],
 select {
   width: 60%;
@@ -53,6 +66,7 @@ textarea {
   min-height: 500px;
   resize: vertical;
 }
+
 /* Button styling */
 button,
 input[type="submit"] {
@@ -71,21 +85,4 @@ input[type="submit"] {
 button:hover,
 input[type="submit"]:hover {
   background-color: #e0372f;
-}
-
-.tags-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 3fr));
-  gap: 0.5rem 1rem;
-  justify-items: start;
-  margin: 1rem auto;
-  max-width: 1000px;
-  text-align: left;
-  padding: 1rem;
-}
-
-.tags-grid label {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
 }

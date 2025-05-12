@@ -347,6 +347,12 @@ background-color: #ae3a38;
   text-decoration: underline;
 }
 
+.footer-links img{
+  height: 24px;
+  width: auto;
+  vertical-align: middle;
+}
+
 .about-page {
   display: flex;
   flex-direction: column;
