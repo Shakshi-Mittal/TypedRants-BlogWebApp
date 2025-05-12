@@ -17,9 +17,16 @@ body {
   padding: 0;
   overflow-x: hidden;
 }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
 
 h2 {
   text-align: center;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
 }
 
 .header-container {
@@ -28,8 +35,8 @@ h2 {
   align-items: center;
   padding: 1rem 2rem;
   width: 100%;
-  margin: 0 auto;
   background-color: white;
+  flex-wrap: wrap;
 }
 
 .logo img {
@@ -49,7 +56,9 @@ h2 {
   overflow-x: scroll;
   scrollbar-width: none;
   padding-bottom: 0.5rem;
-  margin-left: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
 }
 
 .rant-card {
@@ -73,13 +82,28 @@ h2 {
   color: #222;
   font-size: 1.2rem;
   min-height: 48px;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
 
 .rant-card .summary {
   font-style: italic;
   color: #666;
   margin-bottom: auto;
-  min-height: 60px;
+}
+
+.summary {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.summary {
+  overflow: hidden;
+  display: -webkit-box;
+  display: box; /* Fallback */
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .tags {
@@ -118,6 +142,7 @@ h2 {
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .top-nav a {
@@ -125,7 +150,7 @@ h2 {
   color: #ff4b2b;
   font-weight: bold;
   margin-right: 2rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   transition: color 0.3s ease;
 }
 .top-nav a:last-child {
@@ -186,7 +211,7 @@ h2 {
   font-size: 2rem;
   background: none;
   border: none;
-  color: var(--accent-color);
+  color: #ff4b2b;
   cursor: pointer;
   z-index: 200;
 }
@@ -236,14 +261,146 @@ h2 {
 }
 
 /*responsiveness*/
-@media (max-width: 900px) {
-    .rants-scroll-container {
-      grid-template-columns: repeat(2, 1fr);
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  margin-left: auto;
+  color: white;
+  background-color: #ff5816;
+  border: 0;
+  border-radius: 10px;
+  margin-right: 2.5rem; 
+  }
+}
+
+@media (max-width: 768px) {
+  .rants-scroll-container {
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    justify-content: center;
+  }
+
+  .rant-card {
+    width: 90%;
+    margin: 1rem auto;
+  }
+}
+@media (max-width: 768px) {
+  .top-nav {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .top-nav.show {
+    display: flex;
+  }
+
+  .top-nav a {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .mega-menu {
+    position: static;
+    box-shadow: none;
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 0.5rem 0;
+  }
+
+   .dropdown:hover .mega-menu {
+    display: none; /* Disable hover on mobile */
+  }
+}
+@media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .top-nav {
+      display: none;
+      flex-direction: column;
+      background: #fff;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      border-top: 1px solid #ddd;
+       }
+
+    .top-nav.show {
+      display: flex;
+    }
+
+    .desktop-nav {
+      display: none;
+    }
+
+    .mobile-category-bar {
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      background: #fff;
+       padding: 0.5rem 1rem;
+      border-bottom: 1px solid #ddd;
+      gap: 1rem;
+      scrollbar-width: none;
+    }
+
+    .mobile-category-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-item {
+      flex-shrink: 0;
+      color: #555;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.2rem 0;
+    }
+
+    .new-badge {
+      background-color: green;
+      color: white;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      margin-left: 0.3rem;
     }
   }
-  
-  @media (max-width: 600px) {
-    .rants-scroll-container {
-      grid-template-columns: repeat(2, 1fr);
+
+  /* DESKTOP */
+  @media (min-width: 769px) {
+    .mobile-category-bar {
+      display: none;
+    }
+
+    .top-nav {
+      display: none !important;
+    }
+
+    .desktop-nav {
+      display: flex;
     }
   }
+
+
+@media (min-width: 769px) {
+  .rant-card {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rant-card {
+    width: 90%;
+    margin: 1rem auto;
+  }
+}

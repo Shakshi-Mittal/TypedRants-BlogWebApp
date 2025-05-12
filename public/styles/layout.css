@@ -56,10 +56,11 @@ body {
   width: 100%;
   margin: 0 auto;
   background-color: white;
+  border-bottom: 1px solid #ddd;
 }
 
 .logo img {
-  height: 60px;
+  height: 40px;
 }
 
 
@@ -220,6 +221,13 @@ background-color: #ae3a38;
   align-items: center;
   flex-wrap: wrap;
 }
+  .top-nav,
+  .desktop-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+  }
 
 .top-nav a {
   text-decoration: none;
@@ -242,10 +250,20 @@ background-color: #ae3a38;
   position: relative;
 }
 
+.dropdown-toggle {
+    cursor: pointer;
+  }
+
 .nav-links {
   align-items: center;
   margin-right: 0.5rem;
 }
+
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
 
 .mega-menu {
   display: none;
@@ -256,8 +274,9 @@ background-color: #ae3a38;
   padding: 1rem;
   background-color: #fff;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
   border-radius: 10px; 
-  z-index: 100;
+  z-index: 10;
   overflow: hidden;
   gap: 10px;
    /* min-width: 200px; */
@@ -274,18 +293,25 @@ background-color: #ae3a38;
   white-space: normal;
   font-size: 0.9rem;
 }
+  .mega-menu a {
+    padding: 0.3rem 0;
+    color: #333;
+    text-decoration: none;
+  }
 
 .dropdown-content a:hover {
   background-color: #f0f0f0;
 }
 
 /* ========== SHOW ON HOVER ========== */
-.dropdown:hover .mega-menu {
+/* .dropdown:hover .mega-menu {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 3fr));
   gap: 10px;
-}
-
+} */
+  .dropdown:hover .mega-menu {
+    display: flex;
+  }
 
 /*featured css*/
 #featured-rant {
@@ -400,16 +426,138 @@ background-color: #ae3a38;
   align-self: center;
 }
 
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
 /*submit a rant modal*/
 /* Responsive */
-@media (max-width: 900px) {
-    .rants-scroll-container {
-      grid-template-columns: repeat(2, 1fr);
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .top-nav.show {
+    display: flex;
+  }
+
+  .top-nav a {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  margin-left: auto;
+  color: white;
+  background-color: #ff5816;
+  border: 0;
+  border-radius: 10px;
+  margin-right: 2.5rem; 
+  }
+
+  .mega-menu {
+    position: static;
+    box-shadow: none;
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 0.5rem 0;
+  }
+
+   .dropdown:hover .mega-menu {
+    display: none; /* Disable hover on mobile */
+  }
+
+}
+@media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .top-nav {
+      display: none;
+      flex-direction: column;
+      background: #fff;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      border-top: 1px solid #ddd;
+       }
+
+    .top-nav.show {
+      display: flex;
+    }
+
+    .desktop-nav {
+      display: none;
+    }
+
+    .mobile-category-bar {
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      background: #fff;
+       padding: 0.5rem 1rem;
+      border-bottom: 1px solid #ddd;
+      gap: 1rem;
+      scrollbar-width: none;
+    }
+
+    .mobile-category-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-item {
+      flex-shrink: 0;
+      color: #555;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.2rem 0;
+    }
+
+    .new-badge {
+      background-color: green;
+      color: white;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      margin-left: 0.3rem;
     }
   }
-  
-  @media (max-width: 600px) {
-    .rants-scroll-container {
-      grid-template-columns: 1fr;
+
+  /* DESKTOP */
+  @media (min-width: 769px) {
+    .mobile-category-bar {
+      display: none;
+    }
+
+    .top-nav {
+      display: none !important;
+    }
+
+    .desktop-nav {
+      display: flex;
     }
   }

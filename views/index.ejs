@@ -55,5 +55,15 @@
   
   <!-- for submit a rant -->
   <%- include("partials/footer.ejs") %>
+
+  <script>
+  const hamburger = document.getElementById('hamburger');
+  console.log("Hello");
+  const mainNav = document.getElementById('mainNav');
+
+  hamburger.addEventListener('click', () => {
+    mainNav.classList.toggle('show');
+  });
+</script>
 </body>
 </html>

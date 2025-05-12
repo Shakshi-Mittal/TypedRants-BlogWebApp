@@ -9,7 +9,7 @@
 
   <%- include("partials/header.ejs") %> <!-- Optional header/nav -->
 
-  <main class="tag-posts">
+  <main class="tag-posts container">
     <h2>Rants tagged with "<%= tag %>"</h2>
 
     <% if (posts.length > 0) { %>
@@ -31,5 +31,14 @@
   <a href="/" class="back-btn">← Back to All Rants</a>
 
   <%- include("partials/footer.ejs") %>
+  <script>
+  const hamburger = document.getElementById('hamburger');
+  console.log("Hello");
+  const mainNav = document.getElementById('mainNav');
+
+  hamburger.addEventListener('click', () => {
+    mainNav.classList.toggle('show');
+  });
+</script>
 </body>
 </html>
